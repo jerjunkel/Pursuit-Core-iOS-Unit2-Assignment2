@@ -9,14 +9,15 @@
 import UIKit
 
 class GOTTableViewController: UITableViewController {
-
+    let seasons = Season.allSeason
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
         
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
