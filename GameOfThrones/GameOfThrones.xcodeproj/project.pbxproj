@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1AE86B1F21A4B5A3008E936E /* GOTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE86B1E21A4B5A3008E936E /* GOTTableViewController.swift */; };
+		1AE86B2121A4B9A0008E936E /* GOTSeason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE86B2021A4B9A0008E936E /* GOTSeason.swift */; };
 		57D0D22A219F70EA00B5753A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0D229219F70EA00B5753A /* AppDelegate.swift */; };
 		57D0D22F219F70EA00B5753A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D22D219F70EA00B5753A /* Main.storyboard */; };
 		57D0D231219F70EA00B5753A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D230219F70EA00B5753A /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		1AE86B1E21A4B5A3008E936E /* GOTTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTTableViewController.swift; sourceTree = "<group>"; };
+		1AE86B2021A4B9A0008E936E /* GOTSeason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTSeason.swift; sourceTree = "<group>"; };
 		57D0D226219F70EA00B5753A /* GameOfThrones.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfThrones.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D0D229219F70EA00B5753A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57D0D22E219F70EA00B5753A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
 				57D0D22D219F70EA00B5753A /* Main.storyboard */,
 				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
+				1AE86B2021A4B9A0008E936E /* GOTSeason.swift */,
 				57D0D230219F70EA00B5753A /* Assets.xcassets */,
 				57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */,
 				57D0D235219F70EA00B5753A /* Info.plist */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AE86B1F21A4B5A3008E936E /* GOTTableViewController.swift in Sources */,
+				1AE86B2121A4B9A0008E936E /* GOTSeason.swift in Sources */,
 				57D0D23C219F719C00B5753A /* GOTEpisdoe.swift in Sources */,
 				57D0D22A219F70EA00B5753A /* AppDelegate.swift in Sources */,
 			);
