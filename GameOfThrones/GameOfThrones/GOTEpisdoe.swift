@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GOTEpisode {
+struct GOTEpisode {
     var airdate: String
     var id: Int
     var name: String
