@@ -58,7 +58,9 @@ class GOTTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let episode = seasons[indexPath.section].episodes[indexPath.row]
-        let episodeVC = EpisodeViewController(episode: episode)
-        navigationController?.pushViewController(episodeVC, animated: true)
+        //let episodeVC = EpisodeViewController(episode: episode)
+        let episodeVVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "episodeVC") as! EpisodeViewController
+        episodeVVC.episode = episode
+        navigationController?.pushViewController(episodeVVC, animated: true)
     }
 }
