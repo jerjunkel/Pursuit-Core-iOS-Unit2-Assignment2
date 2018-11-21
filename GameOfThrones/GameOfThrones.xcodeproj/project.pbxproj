@@ -41,6 +41,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AC0249D21A51EEF0090CEF6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1AE86B1E21A4B5A3008E936E /* GOTTableViewController.swift */,
+				1AE86B2221A50D0C008E936E /* EpisodeViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1AC0249E21A51EFD0090CEF6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
+				1AE86B2021A4B9A0008E936E /* GOTSeason.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1AC0249F21A51F100090CEF6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
+				57D0D22D219F70EA00B5753A /* Main.storyboard */,
+				57D0D230219F70EA00B5753A /* Assets.xcassets */,
+				57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		57D0D21D219F70EA00B5753A = {
 			isa = PBXGroup;
 			children = (
@@ -60,14 +89,9 @@
 		57D0D228219F70EA00B5753A /* GameOfThrones */ = {
 			isa = PBXGroup;
 			children = (
-				1AE86B1E21A4B5A3008E936E /* GOTTableViewController.swift */,
-				1AE86B2221A50D0C008E936E /* EpisodeViewController.swift */,
-				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
-				57D0D22D219F70EA00B5753A /* Main.storyboard */,
-				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
-				1AE86B2021A4B9A0008E936E /* GOTSeason.swift */,
-				57D0D230219F70EA00B5753A /* Assets.xcassets */,
-				57D0D232219F70EA00B5753A /* LaunchScreen.storyboard */,
+				1AC0249D21A51EEF0090CEF6 /* View Controllers */,
+				1AC0249F21A51F100090CEF6 /* Supporting Files */,
+				1AC0249E21A51EFD0090CEF6 /* Models */,
 				57D0D235219F70EA00B5753A /* Info.plist */,
 			);
 			path = GameOfThrones;
