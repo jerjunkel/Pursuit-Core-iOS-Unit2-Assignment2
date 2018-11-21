@@ -9,7 +9,7 @@
 import UIKit
 
 class GOTTableViewController: UITableViewController {
-    let seasons = Season.allSeason
+    let seasons = Season.allSeasons
     
     override func viewDidLoad() {
         super.viewDidLoad()
