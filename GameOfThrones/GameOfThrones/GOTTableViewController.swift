@@ -14,29 +14,38 @@ class GOTTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTableView()
+    }
+    
+    //MARK : - Setup tableview
+    
+    private func setupTableView() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
-        
     }
     
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        return seasons.count
     }
-
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let season = seasons[section]
+        return "Episode \(season.number)"
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return GOTEpisode.allEpisodes.count
+        let season = seasons[section]
+        return season.episodes.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath)
-
-        cell.textLabel?.text = GOTEpisode.allEpisodes[indexPath.row].name
-        cell.detailTextLabel?.text = GOTEpisode.allEpisodes[indexPath.row].summary
-
+        let season = seasons[indexPath.section]
+        let episode = season.episodes[indexPath.row]
+        
+        cell.textLabel?.text = episode.name
+        cell.detailTextLabel?.text = episode.summary
+        
         return cell
     }
 }
