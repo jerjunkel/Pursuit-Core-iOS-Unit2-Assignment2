@@ -13,11 +13,18 @@ class GOTTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupViewController()
+    }
+    
+    //MARK : - Setup Utilities
+    private func setupViewController() {
+        setupNavigationContoller()
         setupTableView()
     }
     
-    //MARK : - Setup tableview
+    private func setupNavigationContoller() {
+        self.title = "Game Of Throne Episodes"
+    }
     
     private func setupTableView() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
