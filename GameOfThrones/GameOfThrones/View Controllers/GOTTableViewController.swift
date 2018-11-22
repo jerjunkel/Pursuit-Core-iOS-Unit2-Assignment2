@@ -27,7 +27,7 @@ class GOTTableViewController: UITableViewController {
     }
     
     private func setupTableView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
+        tableView.register(GOTTableViewCell.self, forCellReuseIdentifier: GOTTableViewCell.identifier)
     }
     
     // MARK: - Table view data source
@@ -46,13 +46,11 @@ class GOTTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: GOTTableViewCell.identifier, for: indexPath) as! GOTTableViewCell
         let season = seasons[indexPath.section]
         let episode = season.episodes[indexPath.row]
         
-        cell.textLabel?.text = episode.name
-        cell.detailTextLabel?.text = episode.summary
-        
+        cell.episode = episode
         return cell
     }
     
