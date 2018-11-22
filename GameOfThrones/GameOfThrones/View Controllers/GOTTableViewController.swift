@@ -37,7 +37,7 @@ class GOTTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let season = seasons[section]
-        return "Episode \(season.number)"
+        return "Season \(season.number)"
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
