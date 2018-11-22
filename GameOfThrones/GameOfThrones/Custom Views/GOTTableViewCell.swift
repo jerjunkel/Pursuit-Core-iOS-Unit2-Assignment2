@@ -68,8 +68,8 @@ class GOTTableViewCell: UITableViewCell {
             ])
         
         NSLayoutConstraint.activate([
-            cellImageView.widthAnchor.constraint(equalToConstant: 300),
-            cellImageView.heightAnchor.constraint(equalToConstant: 300),
+            cellImageView.widthAnchor.constraint(equalToConstant: 100),
+            cellImageView.heightAnchor.constraint(equalToConstant: 100),
             cellImageView.topAnchor.constraint(equalTo: topAnchor, constant: padding),
             cellImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding),
             cellImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding)
