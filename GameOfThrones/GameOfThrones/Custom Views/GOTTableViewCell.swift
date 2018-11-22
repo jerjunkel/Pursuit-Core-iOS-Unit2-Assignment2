@@ -10,7 +10,11 @@ import UIKit
 
 class GOTTableViewCell: UITableViewCell {
     static let identifier = "GOTCellID"
-    var episode: GOTEpisode!
+    var episode: GOTEpisode! {
+        didSet {
+            updateCellUI()
+        }
+    }
     private let padding: CGFloat = 10
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -21,6 +25,23 @@ class GOTTableViewCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    private func updateCellUI() {
+        setImage(named: episode.mediumImageID)
+        setLabels(title: episode.name, description: "Episode: \(episode.number)")
+    }
+    
+    private func setLabels(title: String, description: String) {
+        cellTitleLabel.text = title
+        cellDescriptionLabel.text = description
+    }
+    
+    private func setImage(named imageString: String) {
+        DispatchQueue.main.async {
+            self.cellImageView.image = UIImage(named: imageString)
+        }
+    }
+
     
     private func setupCell() {
         addViews()
