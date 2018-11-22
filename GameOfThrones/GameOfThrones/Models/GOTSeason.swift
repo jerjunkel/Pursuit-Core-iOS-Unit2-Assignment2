@@ -17,11 +17,9 @@ struct Season {
             let episodes = GOTEpisode.allEpisodes
                 .filter { $0.season == seasonNumber } //O(n)
                 .sorted { $0.number < $1.number } //O(n)
-            let season = Season(number: seasonNumber, episodes: episodes)
-            return season
+            return Season(number: seasonNumber, episodes: episodes)
         }
         
         return allSeasons
     }
-    
 }
