@@ -84,6 +84,7 @@ class GOTTableViewCell: UITableViewCell {
     
     private let cellTitleLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
