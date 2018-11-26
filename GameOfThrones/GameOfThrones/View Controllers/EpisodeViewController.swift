@@ -49,6 +49,6 @@ class EpisodeViewController: UIViewController {
         title = episode.name
         titleLabel.text = episode.name
         descriptionTextView.text = episode.summary
-        seasonLabel.text = "Season: \(episode.season) || Episode: \(episode.number) || Runtime: \(episode.runtime)"
+        seasonLabel.text = "Season: \(episode.season) || Episode: \(episode.number) || Runtime: \(episode.runtime) mins"
     }
 }
