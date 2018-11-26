@@ -48,23 +48,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Res-9s-zzv">
-                                <rect key="frame" x="148" y="333" width="79" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="132" y="328.5" width="111" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vOu-JS-0Nr">
-                                <rect key="frame" x="0.0" y="40" width="375" height="283"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="298.5"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9TD-cP-XES">
-                                <rect key="frame" x="10" y="434" width="355" height="183"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TD-cP-XES">
+                                <rect key="frame" x="10" y="429.5" width="355" height="187.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58f-2O-6eS">
-                                <rect key="frame" x="10" y="368" width="78" height="21"/>
+                                <rect key="frame" x="148.5" y="363.5" width="78" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -74,14 +74,14 @@
                         <constraints>
                             <constraint firstItem="1uz-mb-RT2" firstAttribute="bottom" secondItem="9TD-cP-XES" secondAttribute="bottom" constant="50" id="52Y-Qf-apz"/>
                             <constraint firstItem="9TD-cP-XES" firstAttribute="top" secondItem="58f-2O-6eS" secondAttribute="bottom" constant="45" id="8MS-vb-D1t"/>
-                            <constraint firstItem="58f-2O-6eS" firstAttribute="leading" secondItem="1uz-mb-RT2" secondAttribute="leading" constant="10" id="JvZ-Bo-8DI"/>
                             <constraint firstItem="Res-9s-zzv" firstAttribute="centerY" secondItem="1uz-mb-RT2" secondAttribute="centerY" id="Mtw-aI-axp"/>
                             <constraint firstItem="58f-2O-6eS" firstAttribute="top" secondItem="vOu-JS-0Nr" secondAttribute="bottom" constant="45" id="ccM-QK-30K"/>
                             <constraint firstItem="1uz-mb-RT2" firstAttribute="trailing" secondItem="vOu-JS-0Nr" secondAttribute="trailing" id="eNE-bB-gLU"/>
                             <constraint firstItem="Res-9s-zzv" firstAttribute="top" secondItem="vOu-JS-0Nr" secondAttribute="bottom" constant="10" id="gsY-Ds-8Pj"/>
                             <constraint firstItem="9TD-cP-XES" firstAttribute="leading" secondItem="1uz-mb-RT2" secondAttribute="leading" constant="10" id="h1t-J7-BNk"/>
-                            <constraint firstItem="vOu-JS-0Nr" firstAttribute="top" secondItem="1uz-mb-RT2" secondAttribute="top" constant="20" id="hTK-ga-NnT"/>
+                            <constraint firstItem="vOu-JS-0Nr" firstAttribute="top" secondItem="1uz-mb-RT2" secondAttribute="top" id="hTK-ga-NnT"/>
                             <constraint firstItem="vOu-JS-0Nr" firstAttribute="leading" secondItem="1uz-mb-RT2" secondAttribute="leading" id="kY0-4e-Z9Q"/>
+                            <constraint firstItem="58f-2O-6eS" firstAttribute="centerX" secondItem="RiF-B6-7yB" secondAttribute="centerX" id="otF-pf-o7g"/>
                             <constraint firstItem="Res-9s-zzv" firstAttribute="centerX" secondItem="1uz-mb-RT2" secondAttribute="centerX" id="rCR-jQ-byO"/>
                             <constraint firstItem="1uz-mb-RT2" firstAttribute="trailing" secondItem="9TD-cP-XES" secondAttribute="trailing" constant="10" id="uF9-XW-UgE"/>
                         </constraints>
