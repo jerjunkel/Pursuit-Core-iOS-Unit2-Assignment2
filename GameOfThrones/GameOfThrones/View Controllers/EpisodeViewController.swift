@@ -17,20 +17,18 @@ class EpisodeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // setupVC()
-    }
-    override func viewWillAppear(_ animated: Bool) {
         updateUIElements()
     }
-//    init(episode: GOTEpisode) {
-//        self.episode = episode
-//        super.init(nibName: nil, bundle: nil)
-//        updateUIElements()
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    
+    //    init(episode: GOTEpisode) {
+    //        self.episode = episode
+    //        super.init(nibName: nil, bundle: nil)
+    //        updateUIElements()
+    //    }
+    //
+    //    required init?(coder aDecoder: NSCoder) {
+    //        fatalError("init(coder:) has not been implemented")
+    //    }
     
     private func setupVC() {
         view.backgroundColor = .white
