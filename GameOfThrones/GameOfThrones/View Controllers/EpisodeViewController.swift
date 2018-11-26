@@ -37,7 +37,20 @@ class EpisodeViewController: UIViewController {
     }
     
     private func updateUIElements() {
+        setTextLabels()
+        setImage()
+    }
+    
+    private func setImage() {
+        DispatchQueue.main.async {
+            self.episodeImageView.image = UIImage(named: self.episode.originalImageID)
+        }
+    }
+    
+    private func setTextLabels() {
         title = episode.name
         titleLabel.text = episode.name
+        descriptionTextView.text = episode.summary
+        seasonLabel.text = "Season: \(episode.season) || Episode: \(episode.number) || Runtime: \(episode.runtime)"
     }
 }
