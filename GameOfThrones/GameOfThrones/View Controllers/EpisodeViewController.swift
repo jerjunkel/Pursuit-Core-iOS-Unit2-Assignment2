@@ -11,6 +11,9 @@ import UIKit
 class EpisodeViewController: UIViewController {
     var episode: GOTEpisode!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var episodeImageView: UIImageView!
+    @IBOutlet weak var seasonLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
