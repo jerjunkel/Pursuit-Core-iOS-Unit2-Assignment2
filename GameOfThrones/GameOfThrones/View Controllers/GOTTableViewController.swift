@@ -11,8 +11,13 @@ import UIKit
 class GOTTableViewController: UITableViewController {
     private let seasons = Season.allSeasons
     private var searchResults: [GOTEpisode]?
-    private var isBeingSearched = false
+    private var tableViewState: TableViewState = .showingAllEpisodes
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    private enum TableViewState {
+        case isBeingSearched
+        case showingAllEpisodes
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
