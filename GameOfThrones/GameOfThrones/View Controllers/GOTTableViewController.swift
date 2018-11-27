@@ -70,5 +70,12 @@ class GOTTableViewController: UITableViewController {
 }
 
 extension GOTTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let results = searchEpisodes(for: searchText)
+    }
+    
+    private func searchEpisodes(for queryString: String) -> [GOTEpisode] {
+        return GOTEpisode.allEpisodes.filter { $0.name.contains(queryString) }
+    }
     
 }
