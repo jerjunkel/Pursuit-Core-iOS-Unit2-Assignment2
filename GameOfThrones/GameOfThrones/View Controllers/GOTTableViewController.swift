@@ -61,4 +61,12 @@ class GOTTableViewController: UITableViewController {
         episodeVVC.episode = episode
         navigationController?.pushViewController(episodeVVC, animated: true)
     }
+    
+    private let searchButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 2
+        button.backgroundColor = .red
+        return button
+    }()
 }
