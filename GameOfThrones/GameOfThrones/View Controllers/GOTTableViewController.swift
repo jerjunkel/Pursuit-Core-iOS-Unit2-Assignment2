@@ -21,6 +21,7 @@ class GOTTableViewController: UITableViewController {
     private func setupViewController() {
         setupNavigationContoller()
         setupTableView()
+        setupSearchBar()
     }
     
     private func setupNavigationContoller() {
@@ -29,6 +30,10 @@ class GOTTableViewController: UITableViewController {
     
     private func setupTableView() {
         tableView.register(GOTTableViewCell.self, forCellReuseIdentifier: GOTTableViewCell.identifier)
+    }
+    
+    private func setupSearchBar() {
+        searchBar.delegate = self
     }
     
     // MARK: - Table view data source
@@ -62,4 +67,8 @@ class GOTTableViewController: UITableViewController {
         episodeVVC.episode = episode
         navigationController?.pushViewController(episodeVVC, animated: true)
     }
+}
+
+extension GOTTableViewController: UISearchBarDelegate {
+    
 }
