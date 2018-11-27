@@ -45,25 +45,51 @@ class GOTTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return seasons.count
+        switch tableViewState {
+        case .isBeingSearched:
+            return 1
+        case .showingAllEpisodes:
+            return seasons.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let season = seasons[section]
-        return "Season \(season.number)"
+        switch tableViewState {
+        case .isBeingSearched:
+            guard let searchResultsCount = searchResults?.count, searchResultsCount > 0 else {
+                return "No Results found"
+            }
+            return "\(searchResultsCount) results found"
+        case .showingAllEpisodes:
+            let season = seasons[section]
+            return "Season \(season.number)"
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let season = seasons[section]
-        return season.episodes.count
+        switch tableViewState {
+        case .isBeingSearched:
+            guard let searchResults = searchResults else { return 0 }
+            return searchResults.count
+        case .showingAllEpisodes:
+            let season = seasons[section]
+            return season.episodes.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: GOTTableViewCell.identifier, for: indexPath) as! GOTTableViewCell
-        let season = seasons[indexPath.section]
-        let episode = season.episodes[indexPath.row]
         
-        cell.episode = episode
+        switch tableViewState {
+        case .isBeingSearched:
+            if let searchResults = searchResults {
+                cell.episode = searchResults[indexPath.row]
+            }
+        case .showingAllEpisodes:
+            let season = seasons[indexPath.section]
+            let episode = season.episodes[indexPath.row]
+            cell.episode = episode
+        }
         return cell
     }
     
