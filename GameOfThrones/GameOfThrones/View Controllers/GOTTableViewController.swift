@@ -10,6 +10,8 @@ import UIKit
 
 class GOTTableViewController: UITableViewController {
     private let seasons = Season.allSeasons
+    private var searchResults: [GOTEpisode]?
+    private var isBeingSearched = false
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
