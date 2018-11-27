@@ -11,7 +11,11 @@ import UIKit
 class GOTTableViewController: UITableViewController {
     private let seasons = Season.allSeasons
     private var searchResults: [GOTEpisode]?
-    private var tableViewState: TableViewState = .showingAllEpisodes
+    private var tableViewState: TableViewState = .showingAllEpisodes {
+        didSet {
+            reloadTableview()
+        }
+    }
     @IBOutlet weak var searchBar: UISearchBar!
     
     private enum TableViewState {
@@ -41,6 +45,12 @@ class GOTTableViewController: UITableViewController {
     
     private func setupSearchBar() {
         searchBar.delegate = self
+    }
+    
+    private func reloadTableview() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     // MARK: - Table view data source
@@ -94,21 +104,40 @@ class GOTTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let episode = seasons[indexPath.section].episodes[indexPath.row]
-        //let episodeVC = EpisodeViewController(episode: episode)
         let episodeVVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "episodeVC") as! EpisodeViewController
-        episodeVVC.episode = episode
+        
+        switch tableViewState {
+        case .isBeingSearched:
+            if let searchResults = searchResults {
+                let episode = searchResults[indexPath.row]
+                episodeVVC.episode = episode
+            }
+        case .showingAllEpisodes:
+            let episode = seasons[indexPath.section].episodes[indexPath.row]
+            episodeVVC.episode = episode
+        }
+        //let episodeVC = EpisodeViewController(episode: episode)
+        
+        
         navigationController?.pushViewController(episodeVVC, animated: true)
     }
 }
 
 extension GOTTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let results = searchEpisodes(for: searchText)
+        
+        if searchBar.text!.isEmpty {
+            tableViewState = .showingAllEpisodes
+            searchResults = nil
+        } else {
+            tableViewState = .isBeingSearched
+            let results = searchEpisodes(for: searchText.lowercased())
+            searchResults = results
+        }
     }
     
     private func searchEpisodes(for queryString: String) -> [GOTEpisode] {
-        return GOTEpisode.allEpisodes.filter { $0.name.contains(queryString) }
+        return GOTEpisode.allEpisodes.filter { $0.name.lowercased().contains(queryString) }
     }
     
 }
