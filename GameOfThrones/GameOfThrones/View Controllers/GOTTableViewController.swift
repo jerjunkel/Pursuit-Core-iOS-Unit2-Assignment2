@@ -62,6 +62,8 @@ class GOTTableViewController: UITableViewController {
                 let label = UILabel()
                 label.translatesAutoresizingMaskIntoConstraints = false
                 label.text = title
+                label.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)
+                label.textColor = .white
                 return label
             }()
             
