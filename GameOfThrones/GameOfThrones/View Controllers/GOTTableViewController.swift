@@ -53,6 +53,31 @@ class GOTTableViewController: UITableViewController {
         }
     }
     
+    private func makeSectionHeader(with title: String) -> UIView {
+        let view: UIView = {
+            let view = UIView()
+            view.backgroundColor = .red
+            
+            let titleLabel: UILabel = {
+                let label = UILabel()
+                label.translatesAutoresizingMaskIntoConstraints = false
+                label.text = title
+                return label
+            }()
+            
+            view.addSubview(titleLabel)
+            
+            NSLayoutConstraint.activate([
+                titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+                ])
+            
+            return view
+        }()
+        
+        return view
+    }
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         switch tableViewState {
@@ -63,17 +88,20 @@ class GOTTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var title = ""
         switch tableViewState {
         case .isBeingSearched:
-            guard let searchResultsCount = searchResults?.count, searchResultsCount > 0 else {
-                return "No Results found"
+            if let searchResultsCount = searchResults?.count, searchResultsCount > 0  {
+                title =  "\(searchResultsCount) results found"
+            } else {
+                title = "No Results found"
             }
-            return "\(searchResultsCount) results found"
         case .showingAllEpisodes:
             let season = seasons[section]
-            return "Season \(season.number)"
+            title =  "Season \(season.number)"
         }
+        return makeSectionHeader(with: title)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
