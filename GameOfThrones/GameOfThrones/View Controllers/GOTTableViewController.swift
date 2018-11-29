@@ -28,7 +28,7 @@ class GOTTableViewController: UITableViewController {
         setupViewController()
     }
     
-    //MARK : - Setup Utilities
+    //MARK: - Setup Utilities
     private func setupViewController() {
         setupNavigationContoller()
         setupTableView()
@@ -148,11 +148,10 @@ class GOTTableViewController: UITableViewController {
         }
         //let episodeVC = EpisodeViewController(episode: episode)
         
-        
         navigationController?.pushViewController(episodeVVC, animated: true)
     }
 }
-
+//MARK: - Search bar delegate methods
 extension GOTTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
@@ -169,5 +168,4 @@ extension GOTTableViewController: UISearchBarDelegate {
     private func searchEpisodes(for queryString: String) -> [GOTEpisode] {
         return GOTEpisode.allEpisodes.filter { $0.name.lowercased().contains(queryString) }
     }
-    
 }

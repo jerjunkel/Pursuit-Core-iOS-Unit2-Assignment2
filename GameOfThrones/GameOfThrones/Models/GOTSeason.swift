@@ -16,7 +16,7 @@ struct Season {
         let allSeasons = (1...7).map { seasonNumber -> Season in //O(1)
             let episodes = GOTEpisode.allEpisodes
                 .filter { $0.season == seasonNumber } //O(n)
-                .sorted { $0.number < $1.number } //O(n)
+                .sorted { $0.number < $1.number } //O(m)
             return Season(number: seasonNumber, episodes: episodes)
         }
         

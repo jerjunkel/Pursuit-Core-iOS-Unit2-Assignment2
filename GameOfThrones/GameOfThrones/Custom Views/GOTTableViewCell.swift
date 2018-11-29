@@ -10,12 +10,12 @@ import UIKit
 
 class GOTTableViewCell: UITableViewCell {
     static let identifier = "GOTCellID"
+    private let padding: CGFloat = 10
     var episode: GOTEpisode! {
         didSet {
             updateCellUI()
         }
     }
-    private let padding: CGFloat = 10
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -25,7 +25,8 @@ class GOTTableViewCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    //MARK: - Cell UI Utilities
     private func updateCellUI() {
         setImage(named: episode.mediumImageID)
         setLabels(title: episode.name, description: "Episode: \(episode.number)")
@@ -41,8 +42,8 @@ class GOTTableViewCell: UITableViewCell {
             self.cellImageView.image = UIImage(named: imageString)
         }
     }
-
     
+    //MARK: - Setup Utilities
     private func setupCell() {
         addViews()
         setConstraints()
@@ -76,6 +77,7 @@ class GOTTableViewCell: UITableViewCell {
             ])
     }
     
+    //MARK: - Properties
     private let cellImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
