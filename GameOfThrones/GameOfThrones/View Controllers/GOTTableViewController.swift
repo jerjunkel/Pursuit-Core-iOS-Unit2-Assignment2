@@ -53,7 +53,7 @@ class GOTTableViewController: UITableViewController {
         }
     }
     
-    private func makeSectionHeader(with title: String) -> UIView {
+    private func makeSectionHeader(title: String) -> UIView {
         let view: UIView = {
             let view = UIView()
             view.backgroundColor = .red
@@ -103,7 +103,7 @@ class GOTTableViewController: UITableViewController {
             let season = seasons[section]
             title =  "Season \(season.number)"
         }
-        return makeSectionHeader(with: title)
+        return makeSectionHeader(title: title)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
