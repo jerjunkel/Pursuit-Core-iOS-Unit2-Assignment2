@@ -145,6 +145,7 @@ class GOTTableViewController: UITableViewController {
         case .showingAllEpisodes:
             let episode = seasons[indexPath.section].episodes[indexPath.row]
             episodeVVC.episode = episode
+            searchBar.resignFirstResponder()
         }
         //let episodeVC = EpisodeViewController(episode: episode)
         
